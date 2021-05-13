@@ -4,26 +4,26 @@ import finlyLogo from '../public/assets/finly.svg'
 import subflixLogo from '../public/assets/subflix.svg'
 import ethanmoffatLogo from '../public/assets/ethanmoffat.svg'
 
-const carouselSlideClasses = 'flex bg-white shadow-lg rounded-3xl p-8'
+const carouselSlideClasses = 'block md:flex bg-white dark:bg-gray-200 shadow-lg rounded-3xl p-8'
 const carouselSlideContentClasses = {
-  parent: 'ml-8 cursor-default',
+  parent: 'md:ml-8 md:text-left text-center cursor-default',
   h3: 'text-3xl font-medium text-gray-700',
   p: 'font-body text-gray-500 leading-relaxed text-lg mt-3',
   span: 'font-bold text-gray-600 cursor-pointer'
 }
 
-const largeCarouselSlideClasses = 'flex bg-white shadow-lg rounded-3xl p-8';
+const largeCarouselSlideClasses = 'flex-col lg:flex-row flex bg-white dark:bg-gray-200 shadow-lg rounded-3xl p-8';
 const largeCarouselSlideContentClasses = {
   div: 'flex-1 px-5',
   logo: 'w-96',
-  img: 'flex-1 h-96 shadow-md rounded-3xl',
-  p: 'font-body text-lg text-gray-600 mt-5 leading-10',
-  button: 'mt-12 bg-blue-100 border border-blue-500 text-blue-600 text-md px-12 py-4 rounded-lg transition hover:bg-blue-200'
+  img: 'hidden lg:block flex-1 h-96 shadow-md rounded-3xl',
+  p: 'font-body text-xl text-gray-600 mt-5 leading-10',
+  button: 'mt-12 bg-blue-500 border shadow-md border-blue-500 text-blue-100 text-md px-12 py-4 rounded-lg transition hover:bg-blue-600 transform hover:-translate-y-1'
 }
 
 const carouselSlides = [
   <div className={carouselSlideClasses}>
-    <img src={pattern} className="w-full h-56 rounded-3xl" />
+    <img src={pattern} className="mb-4 md:mb-0 w-full h-56 rounded-3xl" />
     <div className={carouselSlideContentClasses.parent}>
       <h3 className={carouselSlideContentClasses.h3}>Hello! Welcome to my first blog post!</h3>
       <p className={carouselSlideContentClasses.p}>
@@ -32,7 +32,7 @@ const carouselSlides = [
     </div>
   </div>,
   <div className={carouselSlideClasses}>
-    <img src={pattern} className="w-full h-56 rounded-3xl" />
+    <img src={pattern} className="mb-4 w-full h-56 rounded-3xl" />
     <div className={carouselSlideContentClasses.parent}>
       <h3 className={carouselSlideContentClasses.h3}>Hello! Welcome to my first blog post!</h3>
       <p className={carouselSlideContentClasses.p}>
@@ -41,7 +41,7 @@ const carouselSlides = [
     </div>
   </div>,
   <div className={carouselSlideClasses}>
-    <img src={pattern} className="w-full h-56 rounded-3xl" />
+    <img src={pattern} className="mb-4 w-full h-56 rounded-3xl" />
     <div className={carouselSlideContentClasses.parent}>
       <h3 className={carouselSlideContentClasses.h3}>Hello! Welcome to my first blog post!</h3>
       <p className={carouselSlideContentClasses.p}>

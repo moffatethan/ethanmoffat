@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: [
     // This is not present inside the default configuration
@@ -5,16 +7,19 @@ module.exports = {
     // Read more about this here: https://tailwindcss.com/docs/installation#building-your-css
     './pages/**/*.js',
   ],
-  darkMode: false,
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        'teal': '#16BDCA'
+        'teal': '#16BDCA',
+        'teal-light': '#7af6ff',
+        orange: colors.orange
       }
     },
     fontFamily: {
       'work-sans': ['Work Sans', 'ui-sans-serif', 'system-ui', '--apple-system', 'BlinkMacSystemFont', "Segoe UI", 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
-      'body': ['Open Sans', 'sans-serif']
+      'body': ['Open Sans', 'sans-serif'],
+      'fancy-body': ['Playfair Display', 'serif']
     }
   },
   variants: {

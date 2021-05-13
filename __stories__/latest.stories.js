@@ -6,4 +6,8 @@ export default {
   component: Latest
 }
 
-export const Primary = args => <Latest {...args} />
+export const Primary = args => (
+  <div className="w-3/5">
+    <Latest {...args} />
+  </div>
+)

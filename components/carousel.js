@@ -12,39 +12,44 @@ const ReactCarousel = dynamic(
   }
 )
 
-const styles = {
-  'small': 'w-full',
-  'large': 'w-4/5'
-}
-
-export const Carousel = ({ slides, size = 'small' }) => {
+export const Carousel = ({ slides, arrows = true }) => {
   if (Array.isArray(slides) && slides.length < 2 || !Array.isArray(slides)) {
     throw new Error("Carousel slides must be an array of JSX and greater than 2")
   }
+
+  const setupPlugins = () => {
+    const plugins = [
+      'infinite',
+      {
+        resolve: autoplayPlugin,
+        options: {
+          interval: 5000
+        }
+      }
+    ]
+
+    if (arrows) {
+      plugins.push({
+        resolve: arrowsPlugin,
+        options: {
+          arrowLeft: <button className="outline-none focus:outline-none"><CarouselButton /></button>,
+          arrowRight: <button className="outline-none focus:outline-none"><CarouselButton direction="right" /></button>,
+          addArrowClickHandler: true,
+        }
+      })
+    }
+
+    return plugins
+  }
+
   return (
-    <div className={styles[size]}>
+    <div className="w-full">
       <ReactCarousel
-        plugins={[
-          {
-            resolve: arrowsPlugin,
-            options: {
-              arrowLeft: <button className="outline-none focus:outline-none"><CarouselButton /></button>,
-              arrowRight: <button className="outline-none focus:outline-none"><CarouselButton direction="right" /></button>,
-              addArrowClickHandler: true,
-            }
-          },
-          'infinite',
-          {
-            resolve: autoplayPlugin,
-            options: {
-              interval: 5000,
-            }
-          },
-        ]}
+        plugins={setupPlugins()}
       >
         {
           slides.map(slide => (
-            <div key={nanoid()} className='p-8'>
+            <div key={nanoid()} className='p-2 md:p-8 w-full'>
               {slide}
             </div>
           ))
