@@ -1,6 +1,5 @@
 import React from 'react'
 import { Carousel } from './carousel'
-import slides from '../shared/carouselSlides'
 
 export const Latest = ({ posts }) => {
   return (
