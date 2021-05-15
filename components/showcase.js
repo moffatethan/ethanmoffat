@@ -1,8 +1,5 @@
 import React from 'react'
-import { Projects } from './projects'
 import { Carousel } from './carousel'
-
-import slides from '../shared/carouselSlides'
 
 export const Showcase = ({ projects }) => (
   <div className="grid grid-cols-12 p-6 md:p-8 lg:p-16">
