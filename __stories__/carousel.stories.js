@@ -1,8 +1,6 @@
 import React from 'react'
 import { Carousel } from '../components/carousel'
 
-import slides from '../shared/carouselSlides'
-
 export default {
   title: 'Components/Carousel',
   component: Carousel
@@ -10,12 +8,18 @@ export default {
 
 export const SmallCarousel = args => <Carousel {...args} />
 SmallCarousel.args = {
-  slides: slides.smallSlides,
+  slides: [
+    <div></div>,
+    <div></div>
+  ],
   size: 'small'
 }
 
 export const LargeCarousel = args => <Carousel {...args} />
 LargeCarousel.args = {
-  slides: slides.largeSlides,
+  slides: [
+    <div></div>,
+    <div></div>
+  ],
   size: 'large'
 }
