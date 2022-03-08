@@ -46,7 +46,7 @@ export const Navbar = ({ footer = false }) => {
           <li
             className={`dot-separated hover:text-blue-600 cursor-pointer transition-colors ease-in-out font-medium mb-4 lg:mb-0`}
           >
-            <a href="https://world.hey.com/ethanmoffat/" target="_blank">
+            <a href="https://codingscoop.com/" target="_blank">
               read
             </a>
           </li>
