@@ -47,7 +47,7 @@ export const Navbar = ({ footer = false }) => {
             className={`dot-separated hover:text-blue-600 cursor-pointer transition-colors ease-in-out font-medium mb-4 lg:mb-0`}
           >
             <a href="https://codingscoop.com/" target="_blank">
-              read
+              coding scoop
             </a>
           </li>
         </div>
